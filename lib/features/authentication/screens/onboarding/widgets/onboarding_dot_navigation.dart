@@ -1,3 +1,4 @@
+import 'package:flutstore/features/authentication/controllers/onboarding_controller.dart';
 import 'package:flutstore/utils/constants/colors.dart';
 import 'package:flutstore/utils/constants/sizes.dart';
 import 'package:flutstore/utils/device/device_utility.dart';
@@ -11,16 +12,17 @@ class OnBoardingDotNavigation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = OnboardingController.instance;
     final dark = FDeviceUtility.isDarkMode(context);
 
     return Positioned(
-      bottom: FDeviceUtility.getBottomNavigationBarHeight(),
+      bottom: FDeviceUtility.getBottomNavigationBarHeight() + 25,
       left: FSizes.defaultSpace,
       child: SmoothPageIndicator(
-        controller: PageController(),
         count: 3,
-        effect:
-            ExpandingDotsEffect(activeDotColor: dark ? FColors.light : FColors.dark, dotHeight: 6),
+        controller: controller.pageController,
+        onDotClicked: controller.dotNavigationClick,
+        effect: ExpandingDotsEffect(activeDotColor: dark ? FColors.light : FColors.dark, dotHeight: 6),
       ),
     );
   }
