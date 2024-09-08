@@ -25,6 +25,10 @@ class FDeviceUtility {
     return viewInsets.bottom != 0;
   }
 
+  static bool isDarkMode(BuildContext context) {
+    return Theme.of(context).brightness == Brightness.dark;
+  }
+
   static void setFullScreen(bool enable) {
     SystemChrome.setEnabledSystemUIMode(
       enable ? SystemUiMode.immersiveSticky : SystemUiMode.edgeToEdge,
