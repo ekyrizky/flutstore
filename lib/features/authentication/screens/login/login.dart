@@ -20,7 +20,7 @@ class LoginScreen extends StatelessWidget {
             children: [
               LoginHeader(),
               LoginForm(),
-              DividerForm(dividerText: FTexts.orSignInWith),
+              FormDivider(dividerText: FTexts.orSignInWith),
               SizedBox(height: FSizes.spaceBtwSection),
               SocialButton()
             ],

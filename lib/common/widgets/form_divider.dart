@@ -2,8 +2,8 @@ import 'package:flutstore/utils/constants/colors.dart';
 import 'package:flutstore/utils/device/device_utility.dart';
 import 'package:flutter/material.dart';
 
-class DividerForm extends StatelessWidget {
-  const DividerForm({super.key, required this.dividerText});
+class FormDivider extends StatelessWidget {
+  const FormDivider({super.key, required this.dividerText});
 
   final String dividerText;
 
