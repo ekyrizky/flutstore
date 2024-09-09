@@ -1,3 +1,4 @@
+import 'package:flutstore/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 
 class FCheckboxTheme {
@@ -14,7 +15,7 @@ class FCheckboxTheme {
     }),
     fillColor: MaterialStateProperty.resolveWith((state) {
       if (state.contains(MaterialState.selected)) {
-        return Colors.blue;
+        return FColors.primary;
       } else {
         return Colors.transparent;
       }
@@ -32,7 +33,7 @@ class FCheckboxTheme {
     }),
     fillColor: MaterialStateProperty.resolveWith((state) {
       if (state.contains(MaterialState.selected)) {
-        return Colors.blue;
+        return FColors.primary;
       } else {
         return Colors.transparent;
       }
