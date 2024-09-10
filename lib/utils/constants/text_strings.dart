@@ -1,5 +1,10 @@
 class FTexts {
   // Globals
+  static const String and = "and";
+  static const String skip = "Skip";
+  static const String submit = "Submit";
+  static const String done = "Done";
+  static const String fContinue = "Continue";
 
   // OnBoarding
   static const String onBoardingTitle1 = "Choose your product";
@@ -28,8 +33,6 @@ class FTexts {
   static const String orSignInWith = "Or Sign In With";
   static const String orSignUpWith = "Or Sign Up With";
   static const String iAggreeTo = "I aggree to";
-  static const String and = "and";
-  static const String fContinue = "Continue";
   static const String privacyPolicy = "Provacy Policy";
   static const String termsOfUse = "Terms of Use";
   static const String verificationCode = "verification code";
