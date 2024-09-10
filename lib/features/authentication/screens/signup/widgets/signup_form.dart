@@ -1,8 +1,9 @@
+import 'package:flutstore/features/authentication/screens/signup/verify_email.dart';
 import 'package:flutstore/features/authentication/screens/signup/widgets/terms_conditions_checkbox.dart';
 import 'package:flutstore/utils/constants/sizes.dart';
 import 'package:flutstore/utils/constants/text_strings.dart';
-import 'package:flutstore/utils/device/device_utility.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class FormSignUp extends StatelessWidget {
@@ -10,8 +11,6 @@ class FormSignUp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dark = FDeviceUtility.isDarkMode(context);
-
     return Form(
       child: Column(
         children: [
@@ -77,7 +76,7 @@ class FormSignUp extends StatelessWidget {
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () => Get.to(() => const VerifyEmailScreen()),
               child: const Text(FTexts.createAccount),
             ),
           ),

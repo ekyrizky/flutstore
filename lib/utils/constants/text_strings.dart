@@ -29,6 +29,7 @@ class FTexts {
   static const String orSignUpWith = "Or Sign Up With";
   static const String iAggreeTo = "I aggree to";
   static const String and = "and";
+  static const String fContinue = "Continue";
   static const String privacyPolicy = "Provacy Policy";
   static const String termsOfUse = "Terms of Use";
   static const String verificationCode = "verification code";

@@ -3,7 +3,6 @@ import 'package:flutstore/common/widgets/form_divider.dart';
 import 'package:flutstore/features/authentication/screens/signup/widgets/signup_form.dart';
 import 'package:flutstore/utils/constants/sizes.dart';
 import 'package:flutstore/utils/constants/text_strings.dart';
-import 'package:flutstore/utils/device/device_utility.dart';
 import 'package:flutter/material.dart';
 
 class SignUpScreen extends StatelessWidget {
