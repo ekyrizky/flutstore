@@ -11,11 +11,10 @@ class PrimaryHeaderContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CurvedEdge(
-      child: Container(
-        color: FColors.primary,
-        padding: const EdgeInsets.only(bottom: 0),
-        child: SizedBox(
-          height: 400,
+      child: SizedBox(
+        height: 400,
+        child: Container(
+          color: FColors.primary,
           child: Stack(
             children: [
               Positioned(
