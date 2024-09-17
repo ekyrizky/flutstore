@@ -1,3 +1,4 @@
+import 'package:flutstore/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 
 class FTextTheme {
@@ -7,57 +8,57 @@ class FTextTheme {
     headlineLarge: TextStyle().copyWith(
       fontSize: 32.0,
       fontWeight: FontWeight.bold,
-      color: Colors.black,
+      color: FColors.dark,
     ),
     headlineMedium: TextStyle().copyWith(
       fontSize: 24.0,
       fontWeight: FontWeight.w600,
-      color: Colors.black,
+      color: FColors.dark,
     ),
     headlineSmall: TextStyle().copyWith(
       fontSize: 18.0,
       fontWeight: FontWeight.w600,
-      color: Colors.black,
+      color: FColors.dark,
     ),
     titleLarge: TextStyle().copyWith(
       fontSize: 16.0,
       fontWeight: FontWeight.w600,
-      color: Colors.black,
+      color: FColors.dark,
     ),
     titleMedium: TextStyle().copyWith(
       fontSize: 16.0,
       fontWeight: FontWeight.w500,
-      color: Colors.black,
+      color: FColors.dark,
     ),
     titleSmall: TextStyle().copyWith(
       fontSize: 16.0,
       fontWeight: FontWeight.w400,
-      color: Colors.black,
+      color: FColors.dark,
     ),
     bodyLarge: TextStyle().copyWith(
       fontSize: 14.0,
       fontWeight: FontWeight.w500,
-      color: Colors.black,
+      color: FColors.dark,
     ),
     bodyMedium: TextStyle().copyWith(
       fontSize: 14.0,
       fontWeight: FontWeight.normal,
-      color: Colors.black,
+      color: FColors.dark,
     ),
     bodySmall: TextStyle().copyWith(
       fontSize: 14.0,
       fontWeight: FontWeight.w500,
-      color: Colors.black.withOpacity(0.5),
+      color: FColors.dark.withOpacity(0.5),
     ),
     labelLarge: TextStyle().copyWith(
       fontSize: 12.0,
       fontWeight: FontWeight.normal,
-      color: Colors.black,
+      color: FColors.dark,
     ),
     labelMedium: TextStyle().copyWith(
       fontSize: 12.0,
       fontWeight: FontWeight.normal,
-      color: Colors.black.withOpacity(0.5),
+      color: FColors.dark.withOpacity(0.5),
     ),
   );
 
@@ -65,57 +66,57 @@ class FTextTheme {
     headlineLarge: TextStyle().copyWith(
       fontSize: 32.0,
       fontWeight: FontWeight.bold,
-      color: Colors.white,
+      color: FColors.light,
     ),
     headlineMedium: TextStyle().copyWith(
       fontSize: 24.0,
       fontWeight: FontWeight.w600,
-      color: Colors.white,
+      color: FColors.light,
     ),
     headlineSmall: TextStyle().copyWith(
       fontSize: 18.0,
       fontWeight: FontWeight.w600,
-      color: Colors.white,
+      color: FColors.light,
     ),
     titleLarge: TextStyle().copyWith(
       fontSize: 16.0,
       fontWeight: FontWeight.w600,
-      color: Colors.white,
+      color: FColors.light,
     ),
     titleMedium: TextStyle().copyWith(
       fontSize: 16.0,
       fontWeight: FontWeight.w500,
-      color: Colors.white,
+      color: FColors.light,
     ),
     titleSmall: TextStyle().copyWith(
       fontSize: 16.0,
       fontWeight: FontWeight.w400,
-      color: Colors.white,
+      color: FColors.light,
     ),
     bodyLarge: TextStyle().copyWith(
       fontSize: 14.0,
       fontWeight: FontWeight.w500,
-      color: Colors.white,
+      color: FColors.light,
     ),
     bodyMedium: TextStyle().copyWith(
       fontSize: 14.0,
       fontWeight: FontWeight.normal,
-      color: Colors.white,
+      color: FColors.light,
     ),
     bodySmall: TextStyle().copyWith(
       fontSize: 14.0,
       fontWeight: FontWeight.w500,
-      color: Colors.white.withOpacity(0.5),
+      color: FColors.light.withOpacity(0.5),
     ),
     labelLarge: TextStyle().copyWith(
       fontSize: 12.0,
       fontWeight: FontWeight.normal,
-      color: Colors.white,
+      color: FColors.light,
     ),
     labelMedium: TextStyle().copyWith(
       fontSize: 12.0,
       fontWeight: FontWeight.normal,
-      color: Colors.white.withOpacity(0.5),
+      color: FColors.light.withOpacity(0.5),
     ),
   );
 }
