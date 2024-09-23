@@ -3,7 +3,9 @@ import 'package:flutstore/common/widgets/custom_shapes/containers/search_contain
 import 'package:flutstore/common/widgets/texts/section_heading.dart';
 import 'package:flutstore/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:flutstore/features/shop/screens/home/widgets/home_categories.dart';
+import 'package:flutstore/features/shop/screens/home/widgets/promo_slider.dart';
 import 'package:flutstore/utils/constants/colors.dart';
+import 'package:flutstore/utils/constants/image_strings.dart';
 import 'package:flutstore/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
@@ -37,6 +39,16 @@ class HomeScreen extends StatelessWidget {
                       ],
                     ),
                   )
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(FSizes.defaultSpace),
+              child: PromoSlider(
+                banners: [
+                  FImages.promoBanner1,
+                  FImages.promoBanner2,
+                  FImages.promoBanner3,
                 ],
               ),
             ),

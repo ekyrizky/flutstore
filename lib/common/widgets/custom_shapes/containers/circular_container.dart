@@ -9,11 +9,13 @@ class FCircularContainer extends StatelessWidget {
     this.height = 400,
     this.radius = 400,
     this.padding = 0,
+    this.margin,
     this.backgroundColor = FColors.white,
   });
 
   final Widget? child;
   final double width, height, radius, padding;
+  final EdgeInsets? margin;
   final Color backgroundColor;
 
   @override
@@ -21,6 +23,7 @@ class FCircularContainer extends StatelessWidget {
     return Container(
       width: width,
       height: height,
+      margin: margin,
       padding: EdgeInsets.all(padding),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(radius),
