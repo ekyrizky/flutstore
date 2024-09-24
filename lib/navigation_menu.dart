@@ -1,4 +1,4 @@
-import 'package:flutstore/features/shop/screens/home.dart';
+import 'package:flutstore/features/shop/screens/home/home.dart';
 import 'package:flutstore/utils/constants/colors.dart';
 import 'package:flutstore/utils/device/device_utility.dart';
 import 'package:flutter/material.dart';

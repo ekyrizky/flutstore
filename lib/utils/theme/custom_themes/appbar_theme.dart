@@ -1,3 +1,5 @@
+import 'package:flutstore/utils/constants/colors.dart';
+import 'package:flutstore/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
 class FAppBarTheme {
@@ -9,13 +11,9 @@ class FAppBarTheme {
     scrolledUnderElevation: 0,
     backgroundColor: Colors.transparent,
     surfaceTintColor: Colors.transparent,
-    iconTheme: IconThemeData(color: Colors.black, size: 24),
-    actionsIconTheme: IconThemeData(color: Colors.black, size: 24),
-    titleTextStyle: TextStyle(
-      fontSize: 18.0,
-      fontWeight: FontWeight.w600,
-      color: Colors.black,
-    ),
+    iconTheme: IconThemeData(color: FColors.black, size: FSizes.iconMd),
+    actionsIconTheme: IconThemeData(color: FColors.black, size: FSizes.iconMd),
+    titleTextStyle: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w600, color: FColors.black),
   );
 
   static const darkAppBarTheme = AppBarTheme(
@@ -24,12 +22,8 @@ class FAppBarTheme {
     scrolledUnderElevation: 0,
     backgroundColor: Colors.transparent,
     surfaceTintColor: Colors.transparent,
-    iconTheme: IconThemeData(color: Colors.black, size: 24),
-    actionsIconTheme: IconThemeData(color: Colors.white, size: 24),
-    titleTextStyle: TextStyle(
-      fontSize: 18.0,
-      fontWeight: FontWeight.w600,
-      color: Colors.white,
-    ),
+    iconTheme: IconThemeData(color: FColors.black, size: FSizes.iconMd),
+    actionsIconTheme: IconThemeData(color: FColors.white, size: FSizes.iconMd),
+    titleTextStyle: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w600, color: FColors.white),
   );
 }
