@@ -12,20 +12,23 @@ class SearchContainer extends StatelessWidget {
     this.showBackground = true,
     this.showBorder = true,
     this.onTap,
+    this.padding = const EdgeInsets.symmetric(horizontal: FSizes.defaultSpace),
   });
 
   final String text;
   final IconData? icon;
   final bool showBackground, showBorder;
   final VoidCallback? onTap;
+  final EdgeInsetsGeometry padding;
 
   @override
   Widget build(BuildContext context) {
     final dark = FDeviceUtility.isDarkMode(context);
+
     return GestureDetector(
       onTap: onTap,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: FSizes.defaultSpace),
+        padding: padding,
         child: Container(
           width: FDeviceUtility.getScreenWidth(),
           padding: const EdgeInsets.all(FSizes.md),
@@ -40,7 +43,7 @@ class SearchContainer extends StatelessWidget {
           ),
           child: Row(
             children: [
-              Icon(icon, color: FColors.darkGrey),
+              Icon(icon, color: dark ? FColors.darkerGrey : Colors.grey),
               const SizedBox(width: FSizes.spaceBtwItems),
               Text(text, style: Theme.of(context).textTheme.bodySmall),
             ],

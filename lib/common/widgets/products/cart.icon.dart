@@ -5,11 +5,11 @@ import 'package:iconsax/iconsax.dart';
 class CartCounterIcon extends StatelessWidget {
   const CartCounterIcon({
     super.key,
-    required this.color,
+    this.color,
     required this.onPressed,
   });
 
-  final Color color;
+  final Color? color;
   final VoidCallback onPressed;
 
   @override
@@ -35,10 +35,7 @@ class CartCounterIcon extends StatelessWidget {
             child: Center(
               child: Text(
                 '2',
-                style: Theme.of(context)
-                    .textTheme
-                    .labelLarge!
-                    .apply(color: Colors.white, fontSizeFactor: 0.8),
+                style: Theme.of(context).textTheme.labelLarge!.apply(color: Colors.white, fontSizeFactor: 0.8),
               ),
             ),
           ),
