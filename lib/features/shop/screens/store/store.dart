@@ -1,13 +1,13 @@
 import 'package:flutstore/common/widgets/app_bar/appbar.dart';
-import 'package:flutstore/common/widgets/custom_shapes/containers/rounded_container.dart';
+import 'package:flutstore/common/widgets/app_bar/tabbar.dart';
+import 'package:flutstore/common/widgets/brands/brand_show_case.dart';
 import 'package:flutstore/common/widgets/custom_shapes/containers/search_container.dart';
-import 'package:flutstore/common/widgets/images/circular_image.dart';
 import 'package:flutstore/common/widgets/layout/gird_layout.dart';
+import 'package:flutstore/common/widgets/brands/brand_card.dart';
 import 'package:flutstore/common/widgets/products/cart.icon.dart';
-import 'package:flutstore/common/widgets/texts/brand_text_with_verified_icon.dart';
 import 'package:flutstore/common/widgets/texts/section_heading.dart';
+import 'package:flutstore/features/shop/screens/store/widgets/category_tab.dart';
 import 'package:flutstore/utils/constants/colors.dart';
-import 'package:flutstore/utils/constants/enums.dart';
 import 'package:flutstore/utils/constants/image_strings.dart';
 import 'package:flutstore/utils/constants/sizes.dart';
 import 'package:flutstore/utils/device/device_utility.dart';
@@ -18,19 +18,14 @@ class StoreScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: FAppBar(
-        title: Text(
-          'Store',
-          style: Theme.of(context).textTheme.headlineMedium,
+    return DefaultTabController(
+      length: 5,
+      child: Scaffold(
+        appBar: FAppBar(
+          title: Text('Store', style: Theme.of(context).textTheme.headlineMedium),
+          actions: [CartCounterIcon(onPressed: () {})],
         ),
-        actions: [
-          CartCounterIcon(
-            onPressed: () {},
-          )
-        ],
-      ),
-      body: NestedScrollView(
+        body: NestedScrollView(
           headerSliverBuilder: (_, innerBoxScroller) {
             return [
               SliverAppBar(
@@ -62,56 +57,35 @@ class StoreScreen extends StatelessWidget {
                         itemCount: 4,
                         mainAxisExtent: 80,
                         itemBuilder: (_, index) {
-                          return GestureDetector(
-                            onTap: () {},
-                            child: GestureDetector(
-                              onTap: () {},
-                              child: FRoundedContainer(
-                                padding: const EdgeInsets.all(FSizes.sm),
-                                showBorder: true,
-                                backgroundColor: Colors.transparent,
-                                child: Row(
-                                  children: [
-                                    Flexible(
-                                      child: FCircularImage(
-                                        image: FImages.clothIcon,
-                                        backgroundColor: Colors.transparent,
-                                        overlayColor:
-                                            FDeviceUtility.isDarkMode(context) ? FColors.white : FColors.black,
-                                      ),
-                                    ),
-                                    const SizedBox(width: FSizes.spaceBtwItems / 2),
-                                    Expanded(
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.min,
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: [
-                                          const BrandTitleWithVerifiedIcon(
-                                            title: 'Nike',
-                                            brandTextSize: TextSizes.large,
-                                          ),
-                                          Text(
-                                            '256 products',
-                                            overflow: TextOverflow.ellipsis,
-                                            style: Theme.of(context).textTheme.labelMedium,
-                                          ),
-                                        ],
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ),
-                          );
+                          return const BrandCard(showBorder: false);
                         },
                       )
                     ],
                   ),
                 ),
+                bottom: const FTabBar(
+                  tabs: [
+                    Tab(child: Text('Sports')),
+                    Tab(child: Text('Furniture')),
+                    Tab(child: Text('Electronic')),
+                    Tab(child: Text('Clothes')),
+                    Tab(child: Text('Cosmetics')),
+                  ],
+                ),
               )
             ];
           },
-          body: Container()),
+          body: const TabBarView(
+            children: [
+              CategoryTab(),
+              CategoryTab(),
+              CategoryTab(),
+              CategoryTab(),
+              CategoryTab(),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
