@@ -1,4 +1,3 @@
-import 'package:flutstore/utils/constants/colors.dart';
 import 'package:flutstore/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
@@ -10,7 +9,7 @@ class RoundedImage extends StatelessWidget {
     required this.imageUrl,
     this.applyImageRadius = false,
     this.border,
-    this.backgroundColor = FColors.light,
+    this.backgroundColor,
     this.fit = BoxFit.contain,
     this.padding,
     this.isNetworkImage = false,

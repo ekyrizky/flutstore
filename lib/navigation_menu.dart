@@ -1,4 +1,5 @@
 import 'package:flutstore/features/shop/screens/home/home.dart';
+import 'package:flutstore/features/shop/screens/store/store.dart';
 import 'package:flutstore/utils/constants/colors.dart';
 import 'package:flutstore/utils/device/device_utility.dart';
 import 'package:flutter/material.dart';
@@ -21,8 +22,7 @@ class NavigationMenu extends StatelessWidget {
           selectedIndex: controller.selectedIndex.value,
           onDestinationSelected: (index) => controller.selectedIndex.value = index,
           backgroundColor: darkMode ? FColors.black : FColors.white,
-          indicatorColor:
-              darkMode ? FColors.white.withOpacity(0.1) : FColors.black.withOpacity(0.1),
+          indicatorColor: darkMode ? FColors.white.withOpacity(0.1) : FColors.black.withOpacity(0.1),
           destinations: const [
             NavigationDestination(icon: Icon(Iconsax.home), label: 'Home'),
             NavigationDestination(icon: Icon(Iconsax.shop), label: 'Store'),
@@ -41,7 +41,7 @@ class NavigationController extends GetxController {
 
   final screens = [
     const HomeScreen(),
-    Container(color: Colors.green),
+    const StoreScreen(),
     Container(color: Colors.blue),
     Container(color: Colors.yellow),
   ];

@@ -56,6 +56,11 @@ class HomeScreen extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: FSizes.spaceBtwSection),
+                  SectionHeading(
+                    title: 'Popular Products',
+                    onPressed: () {},
+                  ),
+                  const SizedBox(height: FSizes.spaceBtwItems),
                   GridLayout(
                     itemCount: 4,
                     itemBuilder: (_, index) => const ProductCartVertical(),
