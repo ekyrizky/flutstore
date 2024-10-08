@@ -11,25 +11,22 @@ class PrimaryHeaderContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CurvedEdge(
-      child: SizedBox(
-        height: 400,
-        child: Container(
-          color: FColors.primary,
-          child: Stack(
-            children: [
-              Positioned(
-                top: -150,
-                right: -250,
-                child: FCircularContainer(backgroundColor: FColors.white.withOpacity(0.1)),
-              ),
-              Positioned(
-                top: 100,
-                right: -300,
-                child: FCircularContainer(backgroundColor: FColors.white.withOpacity(0.1)),
-              ),
-              child,
-            ],
-          ),
+      child: Container(
+        color: FColors.primary,
+        child: Stack(
+          children: [
+            Positioned(
+              top: -150,
+              right: -250,
+              child: FCircularContainer(backgroundColor: FColors.white.withOpacity(0.1)),
+            ),
+            Positioned(
+              top: 100,
+              right: -300,
+              child: FCircularContainer(backgroundColor: FColors.white.withOpacity(0.1)),
+            ),
+            child,
+          ],
         ),
       ),
     );

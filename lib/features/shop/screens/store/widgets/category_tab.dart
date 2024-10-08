@@ -16,7 +16,7 @@ class CategoryTab extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       children: [
         Padding(
-          padding: EdgeInsets.all(FSizes.defaultSpace),
+          padding: const EdgeInsets.all(FSizes.defaultSpace),
           child: Column(
             children: [
               const BrandShowcase(images: [FImages.productImage3, FImages.productImage2, FImages.productImage1]),
@@ -24,7 +24,7 @@ class CategoryTab extends StatelessWidget {
               const SizedBox(height: FSizes.spaceBtwItems),
               SectionHeading(title: 'You might like', showActionButton: true, onPressed: () {}),
               const SizedBox(height: FSizes.spaceBtwItems),
-              GridLayout(itemCount: 4, itemBuilder: (_, index) => ProductCartVertical()),
+              GridLayout(itemCount: 4, itemBuilder: (_, index) => const ProductCartVertical()),
               const SizedBox(height: FSizes.spaceBtwSection),
             ],
           ),
