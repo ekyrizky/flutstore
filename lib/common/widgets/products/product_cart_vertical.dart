@@ -63,17 +63,20 @@ class ProductCartVertical extends StatelessWidget {
             ),
             const SizedBox(height: FSizes.spaceBtwItems / 2),
             const Padding(
-              padding: EdgeInsets.only(left: FSizes.sm),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  ProductTitleText(
-                    title: 'Green Nike Air Shoes',
-                    smallSize: true,
-                  ),
-                  SizedBox(height: FSizes.spaceBtwItems / 2),
-                  BrandTitleWithVerifiedIcon(title: 'Nike'),
-                ],
+              padding: EdgeInsets.symmetric(horizontal: FSizes.sm),
+              child: SizedBox(
+                width: double.infinity,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    ProductTitleText(
+                      title: 'Green Nike Air Shoes',
+                      smallSize: true,
+                    ),
+                    SizedBox(height: FSizes.spaceBtwItems / 2),
+                    BrandTitleWithVerifiedIcon(title: 'Nike'),
+                  ],
+                ),
               ),
             ),
             const Spacer(),

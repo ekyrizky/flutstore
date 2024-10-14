@@ -18,12 +18,12 @@ class ResetPassword extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(FSizes.defaultSpace),
+          padding: const EdgeInsets.all(FSizes.defaultSpace),
           child: Column(
             children: [
               Image(
                 width: FDeviceUtility.getScreenWidth() * 0.6,
-                image: AssetImage(FImages.deliveredEmailIllustration),
+                image: const AssetImage(FImages.deliveredEmailIllustration),
               ),
               const SizedBox(height: FSizes.spaceBtwSection),
               Text(

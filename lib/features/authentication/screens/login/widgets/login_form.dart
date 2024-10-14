@@ -62,7 +62,7 @@ class LoginForm extends StatelessWidget {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () => Get.to(() => const NavigationMenu()),
-                child: Text(FTexts.signIn),
+                child: const Text(FTexts.signIn),
               ),
             ),
             const SizedBox(height: FSizes.spaceBtwItems),

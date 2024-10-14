@@ -34,7 +34,7 @@ class FColors {
   static Color darkContainer = FColors.white.withOpacity(0.1);
 
   // Button Colors
-  static const Color buttonPrimary = Color(0xFF46B68FF);
+  static const Color buttonPrimary = Color(0xff46b68ff);
   static const Color buttonSecondary = Color(0xFF6C757D);
   static const Color buttonDisabled = Color(0xFFC4C4C4);
 

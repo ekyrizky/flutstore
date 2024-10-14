@@ -22,7 +22,7 @@ class BrandShowcase extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: FSizes.spaceBtwItems),
       child: Column(
         children: [
-          BrandCard(showBorder: false),
+          const BrandCard(showBorder: false),
           const SizedBox(height: FSizes.spaceBtwItems),
           Row(children: images.map((image) => brandTopProductImage(image, context)).toList())
         ],
@@ -35,8 +35,8 @@ class BrandShowcase extends StatelessWidget {
       child: FRoundedContainer(
         height: 100,
         backgroundColor: FDeviceUtility.isDarkMode(context) ? FColors.darkerGrey : FColors.light,
-        margin: EdgeInsets.only(right: FSizes.sm),
-        padding: EdgeInsets.all(FSizes.md),
+        margin: const EdgeInsets.only(right: FSizes.sm),
+        padding: const EdgeInsets.all(FSizes.md),
         child: Image(
           image: AssetImage(image),
           fit: BoxFit.contain,
