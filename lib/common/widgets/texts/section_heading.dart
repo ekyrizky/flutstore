@@ -4,10 +4,10 @@ class SectionHeading extends StatelessWidget {
   const SectionHeading({
     super.key,
     required this.title,
-    this.buttonTitle = 'View All',
-    this.showActionButton = true,
     this.textColor,
     this.onPressed,
+    this.buttonTitle = 'View All',
+    this.showActionButton = true,
   });
 
   final String title, buttonTitle;
