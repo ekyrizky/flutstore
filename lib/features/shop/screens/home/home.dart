@@ -1,7 +1,7 @@
 import 'package:flutstore/common/widgets/custom_shapes/containers/primary_container.dart';
 import 'package:flutstore/common/widgets/custom_shapes/containers/search_container.dart';
 import 'package:flutstore/common/widgets/layout/gird_layout.dart';
-import 'package:flutstore/common/widgets/products/product_cart_vertical.dart';
+import 'package:flutstore/common/widgets/products/product_card_vertical.dart';
 import 'package:flutstore/common/widgets/texts/section_heading.dart';
 import 'package:flutstore/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:flutstore/features/shop/screens/home/widgets/home_categories.dart';
@@ -64,7 +64,7 @@ class HomeScreen extends StatelessWidget {
                   const SizedBox(height: FSizes.spaceBtwItems),
                   GridLayout(
                     itemCount: 4,
-                    itemBuilder: (_, index) => const ProductCartVertical(),
+                    itemBuilder: (_, index) => const ProductCardVertical(),
                   ),
                 ],
               ),

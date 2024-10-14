@@ -1,7 +1,7 @@
 import 'package:flutstore/common/widgets/app_bar/appbar.dart';
 import 'package:flutstore/common/widgets/icons/circular_icon.dart';
 import 'package:flutstore/common/widgets/layout/gird_layout.dart';
-import 'package:flutstore/common/widgets/products/product_cart_vertical.dart';
+import 'package:flutstore/common/widgets/products/product_card_vertical.dart';
 import 'package:flutstore/features/shop/screens/home/home.dart';
 import 'package:flutstore/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +27,7 @@ class WishlistScreen extends StatelessWidget {
             children: [
               GridLayout(
                 itemCount: 6,
-                itemBuilder: (_, index) => const ProductCartVertical(),
+                itemBuilder: (_, index) => const ProductCardVertical(),
               )
             ],
           ),

@@ -3,18 +3,18 @@ import 'package:flutter/material.dart';
 
 class RoundedImage extends StatelessWidget {
   const RoundedImage({
+    required this.imageUrl,
     super.key,
     this.width,
     this.height,
-    required this.imageUrl,
-    this.applyImageRadius = false,
     this.border,
     this.backgroundColor,
+    this.onPressed,
     this.fit = BoxFit.contain,
     this.padding,
+    this.applyImageRadius = true,
     this.isNetworkImage = false,
     this.borderRadius = FSizes.md,
-    this.onPressed,
   });
 
   final double? width, height;
