@@ -16,6 +16,7 @@ class ProductMetaData extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = FDeviceUtility.isDarkMode(context);
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -61,7 +62,7 @@ class ProductMetaData extends StatelessWidget {
             FCircularImage(
               width: 32,
               height: 32,
-              image: FImages.shoeIcon,
+              image: FImages.nike,
               overlayColor: dark ? FColors.white : FColors.black,
             ),
             const BrandTitleWithVerifiedIcon(
