@@ -67,4 +67,7 @@ class FImages {
   static const String productImage33 = "assets/images/products/bedroom_lamp.png";
 
   static const String user = "assets/images/content/user.png";
+  static const String userProfileImage1 = "assets/images/reviews/review_profile_image_1.jpg";
+  static const String userProfileImage2 = "assets/images/reviews/review_profile_image_2.jpg";
+  static const String userProfileImage3 = "assets/images/reviews/review_profile_image_3.jpg";
 }

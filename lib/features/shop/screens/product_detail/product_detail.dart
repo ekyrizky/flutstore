@@ -1,19 +1,13 @@
-import 'package:flutstore/common/widgets/app_bar/appbar.dart';
-import 'package:flutstore/common/widgets/custom_shapes/containers/rounded_container.dart';
-import 'package:flutstore/common/widgets/custom_shapes/edges/curved_edges.dart';
-import 'package:flutstore/common/widgets/icons/circular_icon.dart';
-import 'package:flutstore/common/widgets/images/rounded_image.dart';
 import 'package:flutstore/common/widgets/texts/section_heading.dart';
 import 'package:flutstore/features/shop/screens/product_detail/widgets/bottom_add_to_cart.dart';
 import 'package:flutstore/features/shop/screens/product_detail/widgets/product_attributes.dart';
 import 'package:flutstore/features/shop/screens/product_detail/widgets/product_detail_image_slider.dart';
 import 'package:flutstore/features/shop/screens/product_detail/widgets/product_meta_data.dart';
 import 'package:flutstore/features/shop/screens/product_detail/widgets/rating_share_widget.dart';
-import 'package:flutstore/utils/constants/colors.dart';
-import 'package:flutstore/utils/constants/image_strings.dart';
+import 'package:flutstore/features/shop/screens/product_reviews/product_reviews.dart';
 import 'package:flutstore/utils/constants/sizes.dart';
-import 'package:flutstore/utils/device/device_utility.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:readmore/readmore.dart';
 
@@ -62,7 +56,9 @@ class ProductDetailScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       const SectionHeading(title: 'Reviews(199)', showActionButton: false),
-                      IconButton(onPressed: () {}, icon: const Icon(Iconsax.arrow_right_3, size: 18))
+                      IconButton(
+                          onPressed: () => Get.to(() => const ProductReviewsScreen()),
+                          icon: const Icon(Iconsax.arrow_right_3, size: 18))
                     ],
                   ),
                   const SizedBox(height: FSizes.spaceBtwSection),

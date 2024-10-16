@@ -1,6 +1,6 @@
 import 'package:flutstore/common/widgets/brands/brand_show_case.dart';
 import 'package:flutstore/common/widgets/layout/gird_layout.dart';
-import 'package:flutstore/common/widgets/products/product_card_vertical.dart';
+import 'package:flutstore/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:flutstore/common/widgets/texts/section_heading.dart';
 import 'package:flutstore/utils/constants/image_strings.dart';
 import 'package:flutstore/utils/constants/sizes.dart';

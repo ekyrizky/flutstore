@@ -1,6 +1,6 @@
 import 'package:flutstore/common/widgets/chips/choice_chip.dart';
 import 'package:flutstore/common/widgets/custom_shapes/containers/rounded_container.dart';
-import 'package:flutstore/common/widgets/products/product_price.dart';
+import 'package:flutstore/common/widgets/products/product_cards/product_price.dart';
 import 'package:flutstore/common/widgets/texts/product_title_text.dart';
 import 'package:flutstore/common/widgets/texts/section_heading.dart';
 import 'package:flutstore/utils/constants/colors.dart';

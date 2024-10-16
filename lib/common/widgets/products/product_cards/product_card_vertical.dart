@@ -2,7 +2,7 @@ import 'package:flutstore/common/styles/shadows.dart';
 import 'package:flutstore/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:flutstore/common/widgets/icons/circular_icon.dart';
 import 'package:flutstore/common/widgets/images/rounded_image.dart';
-import 'package:flutstore/common/widgets/products/product_price.dart';
+import 'package:flutstore/common/widgets/products/product_cards/product_price.dart';
 import 'package:flutstore/common/widgets/texts/brand_text_with_verified_icon.dart';
 import 'package:flutstore/common/widgets/texts/product_title_text.dart';
 import 'package:flutstore/features/shop/screens/product_detail/product_detail.dart';

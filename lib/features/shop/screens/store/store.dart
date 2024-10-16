@@ -3,7 +3,7 @@ import 'package:flutstore/common/widgets/app_bar/tabbar.dart';
 import 'package:flutstore/common/widgets/custom_shapes/containers/search_container.dart';
 import 'package:flutstore/common/widgets/layout/gird_layout.dart';
 import 'package:flutstore/common/widgets/brands/brand_card.dart';
-import 'package:flutstore/common/widgets/products/cart.icon.dart';
+import 'package:flutstore/common/widgets/products/cart/cart.icon.dart';
 import 'package:flutstore/common/widgets/texts/section_heading.dart';
 import 'package:flutstore/features/shop/screens/store/widgets/category_tab.dart';
 import 'package:flutstore/utils/constants/colors.dart';

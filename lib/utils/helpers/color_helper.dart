@@ -29,5 +29,6 @@ class FColorHelper {
     } else if (value == 'Indigo') {
       return Colors.indigo;
     }
+    return null;
   }
 }
