@@ -1,5 +1,5 @@
 import 'package:flutstore/common/widgets/app_bar/appbar.dart';
-import 'package:flutstore/common/widgets/products/cart.icon.dart';
+import 'package:flutstore/common/widgets/products/cart/cart.icon.dart';
 import 'package:flutstore/utils/constants/colors.dart';
 import 'package:flutstore/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';

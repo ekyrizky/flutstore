@@ -3,6 +3,7 @@ import 'package:flutstore/common/widgets/custom_shapes/containers/primary_contai
 import 'package:flutstore/common/widgets/list_tiles/settings_menu_tile.dart';
 import 'package:flutstore/common/widgets/list_tiles/user_profile_tile.dart';
 import 'package:flutstore/common/widgets/texts/section_heading.dart';
+import 'package:flutstore/features/personalization/screens/address/address.dart';
 import 'package:flutstore/features/personalization/screens/profile/profile.dart';
 import 'package:flutstore/utils/constants/colors.dart';
 import 'package:flutstore/utils/constants/sizes.dart';
@@ -42,10 +43,11 @@ class SettingsScreen extends StatelessWidget {
                     showActionButton: false,
                   ),
                   const SizedBox(height: FSizes.spaceBtwItems),
-                  const SettingsMenuTile(
+                  SettingsMenuTile(
                     icon: Iconsax.safe_home,
                     title: 'My Addresses',
                     subTitle: 'Set shopping delivery address',
+                    onTap: () => Get.to(() => const UserAddressScreen()),
                   ),
                   const SettingsMenuTile(
                     icon: Iconsax.shopping_cart,

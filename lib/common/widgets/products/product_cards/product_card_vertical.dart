@@ -2,25 +2,27 @@ import 'package:flutstore/common/styles/shadows.dart';
 import 'package:flutstore/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:flutstore/common/widgets/icons/circular_icon.dart';
 import 'package:flutstore/common/widgets/images/rounded_image.dart';
-import 'package:flutstore/common/widgets/products/product_price.dart';
+import 'package:flutstore/common/widgets/products/product_cards/product_price.dart';
 import 'package:flutstore/common/widgets/texts/brand_text_with_verified_icon.dart';
 import 'package:flutstore/common/widgets/texts/product_title_text.dart';
+import 'package:flutstore/features/shop/screens/product_detail/product_detail.dart';
 import 'package:flutstore/utils/constants/colors.dart';
 import 'package:flutstore/utils/constants/image_strings.dart';
 import 'package:flutstore/utils/constants/sizes.dart';
 import 'package:flutstore/utils/device/device_utility.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
-class ProductCartVertical extends StatelessWidget {
-  const ProductCartVertical({super.key});
+class ProductCardVertical extends StatelessWidget {
+  const ProductCardVertical({super.key});
 
   @override
   Widget build(BuildContext context) {
     final dark = FDeviceUtility.isDarkMode(context);
 
     return GestureDetector(
-      onTap: () {},
+      onTap: () => Get.to(() => const ProductDetailScreen()),
       child: Container(
         width: 180,
         padding: const EdgeInsets.all(1),
@@ -85,7 +87,7 @@ class ProductCartVertical extends StatelessWidget {
               children: [
                 const Padding(
                   padding: EdgeInsets.only(left: FSizes.sm),
-                  child: ProductPrice(price: '35.5'),
+                  child: ProductPriceText(price: '35.5'),
                 ),
                 Container(
                   decoration: const BoxDecoration(

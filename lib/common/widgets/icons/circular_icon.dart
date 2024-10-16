@@ -1,4 +1,5 @@
 import 'package:flutstore/utils/constants/colors.dart';
+import 'package:flutstore/utils/constants/sizes.dart';
 import 'package:flutstore/utils/device/device_utility.dart';
 import 'package:flutter/material.dart';
 
@@ -7,7 +8,7 @@ class CircularIcon extends StatelessWidget {
     super.key,
     this.width,
     this.height,
-    this.size,
+    this.size = FSizes.lg,
     required this.icon,
     this.color,
     this.backgroundColor,

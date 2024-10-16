@@ -1,3 +1,4 @@
+import 'package:flutstore/utils/constants/colors.dart';
 import 'package:flutstore/utils/constants/sizes.dart';
 import 'package:flutstore/utils/device/device_utility.dart';
 import 'package:flutter/material.dart';
@@ -22,12 +23,16 @@ class FAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
+    final dark = FDeviceUtility.isDarkMode(context);
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: FSizes.md),
       child: AppBar(
         automaticallyImplyLeading: false,
         leading: showBackArrow
-            ? IconButton(onPressed: () => Get.back(), icon: const Icon(Iconsax.arrow_left))
+            ? IconButton(
+                onPressed: () => Get.back(),
+                icon: Icon(Iconsax.arrow_left, color: dark ? FColors.white : FColors.dark),
+              )
             : leadingIcon != null
                 ? IconButton(onPressed: leadingPressed, icon: Icon(leadingIcon))
                 : null,

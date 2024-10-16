@@ -18,6 +18,7 @@ class FImages {
   static const String furnitureIcon = "assets/icons/categories/icons8-dining-chair-64.png";
   static const String jewelryIcon = "assets/icons/categories/icons8-sparkling-diamond-64.png";
   static const String electronicsIcon = "assets/icons/categories/icons8-smartphone-64.png";
+  static const String nike = "assets/icons/brands/nike.png";
 
   static const String promoBanner1 = "assets/images/products/promo-banner-1.png";
   static const String promoBanner2 = "assets/images/products/promo-banner-2.png";
@@ -66,4 +67,7 @@ class FImages {
   static const String productImage33 = "assets/images/products/bedroom_lamp.png";
 
   static const String user = "assets/images/content/user.png";
+  static const String userProfileImage1 = "assets/images/reviews/review_profile_image_1.jpg";
+  static const String userProfileImage2 = "assets/images/reviews/review_profile_image_2.jpg";
+  static const String userProfileImage3 = "assets/images/reviews/review_profile_image_3.jpg";
 }
