@@ -55,7 +55,7 @@ class SingleAddress extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
               ),
               const SizedBox(height: FSizes.sm / 2),
-              Text(
+              const Text(
                 'MNC Center Jalan Kebon Sirih Kav. 17-19, Jakarta',
                 softWrap: true,
               ),

@@ -1,4 +1,4 @@
-import 'package:flutstore/common/widgets/screen_success.dart';
+import 'package:flutstore/common/widgets/success_screen/success_screen.dart';
 import 'package:flutstore/features/authentication/screens/login/login.dart';
 import 'package:flutstore/utils/constants/image_strings.dart';
 import 'package:flutstore/utils/constants/sizes.dart';
