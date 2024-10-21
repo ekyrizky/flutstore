@@ -51,7 +51,7 @@ class UserReviewCard extends StatelessWidget {
         FRoundedContainer(
           backgroundColor: dark ? FColors.darkerGrey : FColors.grey,
           child: Padding(
-            padding: EdgeInsets.all(FSizes.md),
+            padding: const EdgeInsets.all(FSizes.md),
             child: Column(
               children: [
                 Row(

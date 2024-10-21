@@ -12,10 +12,10 @@ class SubCategoriesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: FAppBar(title: Text('Sports'), showBackArrow: true),
+      appBar: const FAppBar(title: Text('Sports'), showBackArrow: true),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(FSizes.defaultSpace),
+          padding: const EdgeInsets.all(FSizes.defaultSpace),
           child: Column(
             children: [
               const RoundedImage(width: double.infinity, imageUrl: FImages.promoBanner1, applyImageRadius: true),

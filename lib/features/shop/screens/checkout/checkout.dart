@@ -28,7 +28,7 @@ class CheckoutScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(FSizes.defaultSpace),
+          padding: const EdgeInsets.all(FSizes.defaultSpace),
           child: Column(
             children: [
               const CartItems(showAddRemoveButtons: false),
@@ -39,7 +39,7 @@ class CheckoutScreen extends StatelessWidget {
                 showBorder: true,
                 padding: const EdgeInsets.all(FSizes.md),
                 backgroundColor: dark ? FColors.black : FColors.white,
-                child: Column(
+                child: const Column(
                   children: [
                     BillingAmountSection(),
                     SizedBox(height: FSizes.spaceBtwItems),
