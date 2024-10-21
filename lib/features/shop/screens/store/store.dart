@@ -5,11 +5,13 @@ import 'package:flutstore/common/widgets/layout/gird_layout.dart';
 import 'package:flutstore/common/widgets/brands/brand_card.dart';
 import 'package:flutstore/common/widgets/products/cart/cart.icon.dart';
 import 'package:flutstore/common/widgets/texts/section_heading.dart';
+import 'package:flutstore/features/shop/screens/brand/all_brands.dart';
 import 'package:flutstore/features/shop/screens/store/widgets/category_tab.dart';
 import 'package:flutstore/utils/constants/colors.dart';
 import 'package:flutstore/utils/constants/sizes.dart';
 import 'package:flutstore/utils/device/device_utility.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class StoreScreen extends StatelessWidget {
   const StoreScreen({super.key});
@@ -48,7 +50,7 @@ class StoreScreen extends StatelessWidget {
                       const SizedBox(height: FSizes.spaceBtwSection),
                       SectionHeading(
                         title: 'Featured Brands',
-                        onPressed: () {},
+                        onPressed: () => Get.to(() => const AllBrandsScreen()),
                       ),
                       const SizedBox(height: FSizes.spaceBtwItems / 1.5),
                       GridLayout(

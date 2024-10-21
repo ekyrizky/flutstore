@@ -3,6 +3,7 @@ import 'package:flutstore/common/widgets/custom_shapes/containers/search_contain
 import 'package:flutstore/common/widgets/layout/gird_layout.dart';
 import 'package:flutstore/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:flutstore/common/widgets/texts/section_heading.dart';
+import 'package:flutstore/features/shop/screens/all_products/all_products.dart';
 import 'package:flutstore/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:flutstore/features/shop/screens/home/widgets/home_categories.dart';
 import 'package:flutstore/features/shop/screens/home/widgets/promo_slider.dart';
@@ -10,6 +11,7 @@ import 'package:flutstore/utils/constants/colors.dart';
 import 'package:flutstore/utils/constants/image_strings.dart';
 import 'package:flutstore/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -59,7 +61,7 @@ class HomeScreen extends StatelessWidget {
                   const SizedBox(height: FSizes.spaceBtwSection),
                   SectionHeading(
                     title: 'Popular Products',
-                    onPressed: () {},
+                    onPressed: () => Get.to(() => const AllProductsScreen()),
                   ),
                   const SizedBox(height: FSizes.spaceBtwItems),
                   GridLayout(
