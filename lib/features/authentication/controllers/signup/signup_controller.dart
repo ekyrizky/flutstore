@@ -24,21 +24,28 @@ class SignupController extends GetxController {
 
   void signup() async {
     try {
+      FullScreenLoader.openLoadingDialog('We are processing your information...', FImages.docerAnimation);
+
       final isConnected = await NetworkManager.instance.isConnected();
+      if (!isConnected) {
+        FullScreenLoader.stopLoading();
+        return;
+      }
 
-      if (!isConnected) return;
-
-      if (!signUpFormKey.currentState!.validate()) return;
+      if (!signUpFormKey.currentState!.validate()) {
+        FullScreenLoader.stopLoading();
+        return;
+      }
 
       if (!privacyPolicy.value) {
+        FullScreenLoader.stopLoading();
+
         Loaders.warningSnackBar(
           title: 'Accept Privacy Policy',
           message: 'In order to create account, you must have to read and accept the Privacy Policy & Terms of Use.',
         );
         return;
       }
-
-      FullScreenLoader.openLoadingDialog('We are processingyour information...', FImages.docerAnimation);
 
       final userCredential = await AuthRepository.instance.registerWithEmailAndPassword(
         email.text.trim(),
