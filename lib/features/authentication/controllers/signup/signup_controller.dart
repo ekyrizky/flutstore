@@ -24,7 +24,6 @@ class SignupController extends GetxController {
 
   void signup() async {
     try {
-      FullScreenLoader.openLoadingDialog('We are processingyour information...', FImages.docerAnimation);
       final isConnected = await NetworkManager.instance.isConnected();
 
       if (!isConnected) return;
@@ -38,6 +37,8 @@ class SignupController extends GetxController {
         );
         return;
       }
+
+      FullScreenLoader.openLoadingDialog('We are processingyour information...', FImages.docerAnimation);
 
       final userCredential = await AuthRepository.instance.registerWithEmailAndPassword(
         email.text.trim(),
@@ -63,12 +64,10 @@ class SignupController extends GetxController {
         message: 'Your account has been created! Verify email to continue.',
       );
 
-      Get.to(() => const VerifyEmailScreen());
+      Get.to(() => VerifyEmailScreen(email: email.text.trim()));
     } catch (e) {
       FullScreenLoader.stopLoading();
       Loaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
-    } finally {
-      FullScreenLoader.stopLoading();
     }
   }
 }
