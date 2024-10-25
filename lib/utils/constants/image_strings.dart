@@ -80,4 +80,7 @@ class FImages {
   static const String paytm = "assets/icons/payment_methods/paytm.png";
   static const String visa = "assets/icons/payment_methods/visa.png";
   static const String successfulPaymentIcon = "assets/icons/payment_methods/successful_payment_icon.png";
+  static const String successfulRegisterAnimation = "assets/images/animations/72462-check-register.json";
+
+  static const String docerAnimation = "assets/images/animations/141594-animation-of-docer.json";
 }

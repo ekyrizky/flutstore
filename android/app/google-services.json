@@ -1,0 +1,90 @@
+{
+  "project_info": {
+    "project_number": "26682281372",
+    "project_id": "flutstore-a1600",
+    "storage_bucket": "flutstore-a1600.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:26682281372:android:f3e3a558abf7d94fcd4c59",
+        "android_client_info": {
+          "package_name": "com.example.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "26682281372-8b532ovrkbopt5j9q4u9pir359iusnbg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.app",
+            "certificate_hash": "ef2b520be32e1184e4ed8be92570409f11991326"
+          }
+        },
+        {
+          "client_id": "26682281372-7qqhplbbfopfdgr409a35f14pq4g5av6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmc4DQYpp209S0YU7OtnLOTSWBSHtJVIw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "26682281372-7qqhplbbfopfdgr409a35f14pq4g5av6.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "26682281372-g8othes6ivhos27mv1sail5vm1nb0tj8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flutstore"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:26682281372:android:0498c52f9f7d336acd4c59",
+        "android_client_info": {
+          "package_name": "com.example.flutstore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "26682281372-7qqhplbbfopfdgr409a35f14pq4g5av6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmc4DQYpp209S0YU7OtnLOTSWBSHtJVIw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "26682281372-7qqhplbbfopfdgr409a35f14pq4g5av6.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "26682281372-g8othes6ivhos27mv1sail5vm1nb0tj8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flutstore"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

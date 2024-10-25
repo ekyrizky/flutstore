@@ -3,6 +3,7 @@ import 'package:flutstore/utils/constants/sizes.dart';
 import 'package:flutstore/utils/constants/text_strings.dart';
 import 'package:flutstore/utils/device/device_utility.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class SuccessScreen extends StatelessWidget {
   const SuccessScreen({
@@ -23,10 +24,7 @@ class SuccessScreen extends StatelessWidget {
         padding: SpacingStyles.paddingWithAppBarHeight * 2,
         child: Column(
           children: [
-            Image(
-              width: FDeviceUtility.getScreenWidth() * 0.6,
-              image: AssetImage(image),
-            ),
+            Lottie.asset(image, width: FDeviceUtility.getScreenWidth() * 0.6),
             const SizedBox(height: FSizes.spaceBtwSection),
             Text(
               title,

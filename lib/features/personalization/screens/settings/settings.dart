@@ -3,11 +3,13 @@ import 'package:flutstore/common/widgets/custom_shapes/containers/primary_contai
 import 'package:flutstore/common/widgets/list_tiles/settings_menu_tile.dart';
 import 'package:flutstore/common/widgets/list_tiles/user_profile_tile.dart';
 import 'package:flutstore/common/widgets/texts/section_heading.dart';
+import 'package:flutstore/data/repositories/auth/auth_repository.dart';
 import 'package:flutstore/features/personalization/screens/address/address.dart';
 import 'package:flutstore/features/personalization/screens/profile/profile.dart';
 import 'package:flutstore/features/shop/screens/order/order.dart';
 import 'package:flutstore/utils/constants/colors.dart';
 import 'package:flutstore/utils/constants/sizes.dart';
+import 'package:flutstore/utils/device/device_utility.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
@@ -116,9 +118,17 @@ class SettingsScreen extends StatelessWidget {
                       onChanged: (value) {},
                     ),
                   ),
+                  const SizedBox(height: FSizes.spaceBtwSection),
+                  SizedBox(
+                    width: FDeviceUtility.getScreenWidth(),
+                    child: OutlinedButton(
+                      onPressed: () => AuthRepository.instance.logout(),
+                      child: const Text('Logout'),
+                    ),
+                  )
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),

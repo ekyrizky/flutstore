@@ -1,3 +1,4 @@
+import 'package:flutstore/bindings/general_bindings.dart';
 import 'package:flutstore/features/authentication/screens/onboarding/onboarding.dart';
 import 'package:flutstore/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +13,7 @@ class App extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: FAppTheme.lightTheme,
       darkTheme: FAppTheme.darkTheme,
+      initialBinding: GeneralBindings(),
       home: const OnBoardingScreen(),
     );
   }

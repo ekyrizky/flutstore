@@ -1,4 +1,4 @@
-import 'package:flutstore/features/authentication/controllers/onboarding_controller.dart';
+import 'package:flutstore/features/authentication/controllers/onboarding/onboarding_controller.dart';
 import 'package:flutstore/utils/constants/colors.dart';
 import 'package:flutstore/utils/constants/sizes.dart';
 import 'package:flutstore/utils/device/device_utility.dart';
