@@ -74,6 +74,18 @@ class AuthRepository extends GetxController {
     }
   }
 
+  Future<void> sendPasswordResetEmail(String email) async {
+    try {
+      return await _auth.sendPasswordResetEmail(email: email);
+    } on FirebaseAuthException catch (e) {
+      throw FFirebaseException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw FFirebaseException(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again';
+    }
+  }
+
   Future<UserCredential?> signInWithGoogle() async {
     try {
       final GoogleSignInAccount? userAccount = await GoogleSignIn().signIn();
@@ -94,7 +106,7 @@ class AuthRepository extends GetxController {
 
   Future<void> logout() async {
     try {
-      await GoogleSignIn().signOut(); 
+      await GoogleSignIn().signOut();
       await _auth.signOut();
       Get.offAll(() => const LoginScreen());
     } on FirebaseAuthException catch (e) {
