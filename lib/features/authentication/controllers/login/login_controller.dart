@@ -1,4 +1,5 @@
 import 'package:flutstore/data/repositories/auth/auth_repository.dart';
+import 'package:flutstore/features/personalization/controllers/user_controller.dart';
 import 'package:flutstore/utils/constants/image_strings.dart';
 import 'package:flutstore/utils/helpers/network_manager.dart';
 import 'package:flutstore/utils/popups/full_screen_loader.dart';
@@ -16,6 +17,7 @@ class LoginController extends GetxController {
   final rememberMe = false.obs;
   GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
   final localStorage = GetStorage();
+  final userController = Get.put(UserController());
 
   @override
   void onInit() {
@@ -43,13 +45,29 @@ class LoginController extends GetxController {
         localStorage.write('REMEMBER_ME_EMAIL', email.text.trim());
         localStorage.write('REMEMBER_ME_PASSWORD', password.text.trim());
       }
-      print('email : $email');
-      print('password : $password');
-      final UserCredentials = await AuthRepository.instance.loginWithEmailAndPassword(
-        email.text.trim(),
-        password.text.trim(),
-      );
 
+      await AuthRepository.instance.loginWithEmailAndPassword(email.text.trim(), password.text.trim());
+
+      FullScreenLoader.stopLoading();
+      AuthRepository.instance.screenRedirect();
+    } catch (e) {
+      FullScreenLoader.stopLoading();
+      Loaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
+    }
+  }
+
+  Future<void> googleSignIn() async {
+    try {
+      FullScreenLoader.openLoadingDialog('Logging you in...', FImages.docerAnimation);
+
+      final isConnected = await NetworkManager.instance.isConnected();
+      if (!isConnected) {
+        FullScreenLoader.stopLoading();
+        return;
+      }
+
+      final userCredentials = await AuthRepository.instance.signInWithGoogle();
+      await userController.saveUserRecord(userCredentials);
       FullScreenLoader.stopLoading();
       AuthRepository.instance.screenRedirect();
     } catch (e) {
