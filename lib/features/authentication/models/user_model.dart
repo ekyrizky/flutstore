@@ -2,13 +2,13 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutstore/utils/formatters/formatter.dart';
 
 class UserModel {
-  final String id;
-  final String firstName;
-  final String lastName;
-  final String username;
-  final String email;
-  final String phoneNumber;
-  final String profilePicture;
+  String id;
+  String firstName;
+  String lastName;
+  String username;
+  String email;
+  String phoneNumber;
+  String profilePicture;
 
   UserModel({
     required this.id,

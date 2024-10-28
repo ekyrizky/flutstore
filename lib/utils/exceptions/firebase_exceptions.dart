@@ -4,6 +4,7 @@ class FFirebaseException implements Exception {
   FFirebaseException(this.code);
 
   String get message {
+    print("FIREBASE CODE = $code");
     switch (code) {
       case 'email-already-in-use':
         return 'The email address is already registered. Please use a different email.';

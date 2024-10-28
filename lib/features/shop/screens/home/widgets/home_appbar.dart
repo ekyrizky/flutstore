@@ -1,8 +1,11 @@
 import 'package:flutstore/common/widgets/app_bar/appbar.dart';
 import 'package:flutstore/common/widgets/products/cart/cart.icon.dart';
+import 'package:flutstore/common/widgets/shimmer/shimmer_effect.dart';
+import 'package:flutstore/features/personalization/controllers/user_controller.dart';
 import 'package:flutstore/utils/constants/colors.dart';
 import 'package:flutstore/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class HomeAppBar extends StatelessWidget {
   const HomeAppBar({
@@ -11,6 +14,8 @@ class HomeAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(UserController());
+    
     return FAppBar(
       title: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -19,9 +24,17 @@ class HomeAppBar extends StatelessWidget {
             FTexts.homeAppbarTitle,
             style: Theme.of(context).textTheme.labelMedium!.apply(color: FColors.grey),
           ),
-          Text(
-            FTexts.homeAppbarSubTitle,
-            style: Theme.of(context).textTheme.headlineSmall!.apply(color: FColors.white),
+          Obx(
+            () {
+              if (controller.profileLoading.value) {
+                return const ShimmerEffect(width: 80, height: 15);
+              } else {
+                return Text(
+                  controller.user.value.fullName,
+                  style: Theme.of(context).textTheme.headlineSmall!.apply(color: FColors.white),
+                );
+              }
+            },
           ),
         ],
       ),
