@@ -11,6 +11,7 @@ import 'package:flutstore/utils/popups/full_screen_loader.dart';
 import 'package:flutstore/utils/popups/loaders.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 
 class UserController extends GetxController {
   static UserController get instance => Get.find();
@@ -20,6 +21,7 @@ class UserController extends GetxController {
 
   final profileLoading = false.obs;
   final hidePassword = false.obs;
+  final imageUploading = false.obs;
   final verifyEmail = TextEditingController();
   final verifyPasssword = TextEditingController();
   GlobalKey<FormState> reAuthFormKey = GlobalKey<FormState>();
@@ -44,21 +46,25 @@ class UserController extends GetxController {
 
   Future<void> saveUserRecord(UserCredential? userCredentials) async {
     try {
-      if (userCredentials != null) {
-        final nameParts = UserModel.nameParts(userCredentials.user!.displayName ?? '');
-        final username = UserModel.generateUsername(userCredentials.user!.displayName ?? '');
+      await fetchUserRecord();
 
-        final user = UserModel(
-          id: userCredentials.user!.uid,
-          firstName: nameParts[0],
-          lastName: nameParts.length > 1 ? nameParts.sublist(1).join(' ') : '',
-          username: username,
-          email: userCredentials.user!.email ?? '',
-          phoneNumber: userCredentials.user!.phoneNumber ?? '',
-          profilePicture: userCredentials.user!.photoURL ?? '',
-        );
+      if (user.value.id.isEmpty) {
+        if (userCredentials != null) {
+          final nameParts = UserModel.nameParts(userCredentials.user!.displayName ?? '');
+          final username = UserModel.generateUsername(userCredentials.user!.displayName ?? '');
 
-        await userRepository.saveUserRecord(user);
+          final user = UserModel(
+            id: userCredentials.user!.uid,
+            firstName: nameParts[0],
+            lastName: nameParts.length > 1 ? nameParts.sublist(1).join(' ') : '',
+            username: username,
+            email: userCredentials.user!.email ?? '',
+            phoneNumber: userCredentials.user!.phoneNumber ?? '',
+            profilePicture: userCredentials.user!.photoURL ?? '',
+          );
+
+          await userRepository.saveUserRecord(user);
+        }
       }
     } catch (e) {
       Loaders.warningSnackBar(
@@ -136,6 +142,32 @@ class UserController extends GetxController {
     } catch (e) {
       FullScreenLoader.stopLoading();
       Loaders.warningSnackBar(title: 'Oh Snap!', message: e.toString());
+    }
+  }
+
+  uploadUserProfilePicture() async {
+    try {
+      final image = await ImagePicker().pickImage(
+        source: ImageSource.gallery,
+        imageQuality: 70,
+        maxHeight: 512,
+        maxWidth: 512,
+      );
+
+      if (image != null) {
+        imageUploading.value = true;
+        final imageUrl = await userRepository.uploadImage('Users/Images/Profile/', image);
+        Map<String, dynamic> json = {'ProfilePicture': imageUrl};
+
+        await userRepository.updateSingleField(json);
+        user.value.profilePicture = imageUrl;
+        user.refresh();
+        Loaders.successSnackBar(title: 'Congratulations', message: 'Your profile image as been updated!');
+      }
+    } catch (e) {
+      Loaders.errorSnackBar(title: 'Oh Snap!', message: 'Something went wrong: $e');
+    } finally {
+      imageUploading.value = false;
     }
   }
 }
