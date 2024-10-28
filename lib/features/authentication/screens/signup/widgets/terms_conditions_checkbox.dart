@@ -27,32 +27,34 @@ class TermsAndConditionCheckBox extends StatelessWidget {
           ),
         ),
         const SizedBox(width: FSizes.spaceBtwItems),
-        Text.rich(TextSpan(
-          children: [
-            TextSpan(
-              text: '${FTexts.iAggreeTo} ',
-              style: Theme.of(context).textTheme.bodySmall,
-            ),
-            TextSpan(
-              text: '${FTexts.privacyPolicy} ',
-              style: Theme.of(context).textTheme.bodyMedium!.apply(
-                  color: dark ? FColors.white : FColors.primary,
-                  decoration: TextDecoration.underline,
-                  decorationColor: dark ? FColors.white : FColors.primary),
-            ),
-            TextSpan(
-              text: '${FTexts.and} ',
-              style: Theme.of(context).textTheme.bodySmall,
-            ),
-            TextSpan(
-              text: FTexts.termsOfUse,
-              style: Theme.of(context).textTheme.bodyMedium!.apply(
-                  color: dark ? FColors.white : FColors.primary,
-                  decoration: TextDecoration.underline,
-                  decorationColor: dark ? FColors.white : FColors.primary),
-            ),
-          ],
-        ))
+        Expanded(
+          child: Text.rich(TextSpan(
+            children: [
+              TextSpan(
+                text: '${FTexts.iAggreeTo} ',
+                style: Theme.of(context).textTheme.bodySmall,
+              ),
+              TextSpan(
+                text: '${FTexts.privacyPolicy} ',
+                style: Theme.of(context).textTheme.bodyMedium!.apply(
+                    color: dark ? FColors.white : FColors.primary,
+                    decoration: TextDecoration.underline,
+                    decorationColor: dark ? FColors.white : FColors.primary),
+              ),
+              TextSpan(
+                text: '${FTexts.and} ',
+                style: Theme.of(context).textTheme.bodySmall,
+              ),
+              TextSpan(
+                text: FTexts.termsOfUse,
+                style: Theme.of(context).textTheme.bodyMedium!.apply(
+                    color: dark ? FColors.white : FColors.primary,
+                    decoration: TextDecoration.underline,
+                    decorationColor: dark ? FColors.white : FColors.primary),
+              ),
+            ],
+          )),
+        )
       ],
     );
   }

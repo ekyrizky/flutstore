@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutstore/data/repositories/user/user_repository.dart';
 import 'package:flutstore/features/authentication/screens/login/login.dart';
 import 'package:flutstore/features/authentication/screens/onboarding/onboarding.dart';
 import 'package:flutstore/features/authentication/screens/signup/verify_email.dart';
@@ -15,6 +16,8 @@ class AuthRepository extends GetxController {
 
   final deviceStorage = GetStorage();
   final _auth = FirebaseAuth.instance;
+
+  User? get authUser => _auth.currentUser;
 
   @override
   void onReady() {
@@ -115,6 +118,33 @@ class AuthRepository extends GetxController {
       throw FFirebaseException(e.code).message;
     } catch (e) {
       throw 'Something went wrong. Please try again';
+    }
+  }
+
+  Future<void> reAuthenticateWithEmailAndPassword(String email, String password) async {
+    try {
+      AuthCredential credential = EmailAuthProvider.credential(email: email, password: password);
+      await _auth.currentUser!.reauthenticateWithCredential(credential);
+      await _auth.currentUser!.delete();
+    } on FirebaseAuthException catch (e) {
+      throw FFirebaseException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw FFirebaseException(e.code).message;
+    } catch (e) {
+      throw 'REAUTH Something went wrong. Please try again';
+    }
+  }
+
+  Future<void> deleteAccount() async {
+    try {
+      await UserRepository.instance.removeUser(_auth.currentUser!.uid);
+      await _auth.currentUser?.delete();
+    } on FirebaseAuthException catch (e) {
+      throw FFirebaseException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw FFirebaseException(e.code).message;
+    } catch (e) {
+      throw 'deleteAccount Something went wrong. Please try again';
     }
   }
 }
